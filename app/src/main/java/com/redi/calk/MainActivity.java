@@ -77,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
                         result /= operand;
                         break;
                     case "%":
-                        result %= operand;
+                        try {
+                            result %= operand;
+                        }
+                        catch (NumberFormatException e) {
+                        result = 0;
+
+                    }
                         break;
                 }
             }
